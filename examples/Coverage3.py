@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 # ------------
 # Coverage3.py
@@ -15,13 +15,13 @@ def test (b, c) :
     else :
         print("b is false and c is false")
 
-print "Coverage3.py"
+print("Coverage3.py")
 
 test(False, False)
 test(False, True)
 test(True,  False)
 
-print "Done."
+print("Done.")
 
 """
 % coverage run --branch Coverage3.py
