@@ -22,25 +22,25 @@ print("Done.")
 
 """
 UnitTests.py
-.F.F
+F.F
 ======================================================================
-FAIL: test_2 (__main__.UnitTests)
+FAIL: test_1 (__main__.UnitTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "./UnitTests.py", line 16, in test_2
-    self.assertTrue(False)
-AssertionError
+  File "./UnitTests.py", line 11, in test_1
+    self.assertTrue(1 == 2)
+AssertionError: False is not true
 
 ======================================================================
-FAIL: test_4 (__main__.UnitTests)
+FAIL: test_3 (__main__.UnitTests)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "./UnitTests.py", line 22, in test_4
-    self.assertTrue(False)
-AssertionError
+  File "./UnitTests.py", line 17, in test_3
+    self.assertTrue(3 == 2)
+AssertionError: False is not true
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.000s
+Ran 3 tests in 0.001s
 
 FAILED (failures=2)
 """
