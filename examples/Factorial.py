@@ -10,36 +10,36 @@ import operator
 import sys
 import time
 
-def factorial_1 (n) :
+def factorial_recursion (n) :
     if n < 2 :
         return 1
-    return n * factorial_1(n - 1)
+    return n * factorial_recursion(n - 1)
 
-def factorial_2 (n) :
+def factorial_tail_recursion (n) :
     def f (n, m) :
         if n < 2 :
             return m
         return f(n - 1 , n * m)
     return f(n, 1)
 
-def factorial_3 (n) :
+def factorial_while (n) :
     v = 1
     while n > 1 :
         v *= n
         n -= 1
     return v
 
-def factorial_4 (n) :
+def factorial_for_range (n) :
     v = 1
     for i in range(1, n + 1) :
         v *= i
     return v
 
-def factorial_5 (n) :
+def factorial_reduce_range (n) :
     return functools.reduce(operator.mul, range(1, n + 1), 1)
 
-def test (f, s) :
-    print(f.__name__ + " (" + s + ")")
+def test (f) :
+    print(f.__name__)
     assert(f(0) ==   1)
     assert(f(1) ==   1)
     assert(f(2) ==   2)
@@ -59,44 +59,44 @@ print()
 print(sys.version)
 print()
 
-test(factorial_1,    "recursion")
-test(factorial_2,    "tail recursion")
-test(factorial_3,    "while")
-test(factorial_4,    "for range")
-test(factorial_5,    "functools.reduce range")
-test(math.factorial, "python")
+test(factorial_recursion)
+test(factorial_tail_recursion)
+test(factorial_while)
+test(factorial_for_range)
+test(factorial_reduce_range)
+test(math.factorial)
 
 print("Done.")
 
 """
 Factorial.py
 
-3.3.3 (default, Jan 19 2014, 10:13:09)
+3.3.3 (default, Jan 19 2014, 09:53:07)
 [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.2.79)]
 
-factorial_1 (recursion)
+factorial_recursion
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.036 milliseconds
+0.112 milliseconds
 
-factorial_2 (tail recursion)
+factorial_tail_recursion
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.051 milliseconds
+0.111 milliseconds
 
-factorial_3 (while)
+factorial_while
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.015 milliseconds
+0.049 milliseconds
 
-factorial_4 (for range)
+factorial_for_range
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.011 milliseconds
+0.041 milliseconds
 
-factorial_5 (functools.reduce range)
+factorial_reduce_range
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.013 milliseconds
+0.044 milliseconds
 
-factorial (python)
+factorial
 93326215443944152681699238856266700490715968264381621468592963895217599993229915608941463976156518286253697920827223758251185210916864000000000000000000000000
-0.019 milliseconds
+0.030 milliseconds
 
 Done.
 """
