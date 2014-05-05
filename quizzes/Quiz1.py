@@ -5,7 +5,32 @@ OOPL JPL: Quiz #1
 """
 
 """ ----------------------------------------------------------------------
-1. What does the following program do?
+1. What does the following program output?
+
+type(False): <class 'bool'>
+type(bool): <class 'type'>
+type(NameError()): <class 'NameError'>
+type(NameError): <class 'type'>
+type(type): <class 'type'>
+
+g1
+f1
+f2
+g2
+else
+finally
+g3
+
+g1
+f1
+NameError
+finally
+g3
+
+g1
+f1
+finally
+TypeError
 """
 
 print("type(False):",       type(False))
@@ -39,10 +64,16 @@ def g (n) :
     except TypeError :
         print("TypeError")
 
-g(0)
+def h (n) :
+    try :
+        g(n)
+    except TypeError :
+        print("TypeError")
+
+h(0)
 print()
 
-g(1)
+h(1)
 print()
 
-g(2)
+h(2)
