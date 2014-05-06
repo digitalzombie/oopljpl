@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# -----------
-# IsPrime2.py
-# -----------
+# ----------
+# IsPrime.py
+# ----------
 
 from math import sqrt
 
@@ -15,7 +15,7 @@ def is_prime (n) :
             return False
     return True
 
-print("IsPrime2.py")
+print("IsPrime.py")
 
 assert(not is_prime( 1));
 assert(    is_prime( 2));
@@ -33,7 +33,7 @@ print("Done.")
 
 """
 % coverage run --branch IsPrime2.py
-IsPrime2.py
+IsPrime.py
 Done.
 
 % coverage report
