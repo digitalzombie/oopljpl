@@ -5,7 +5,7 @@ OOPL JPL: Quiz #1
 """
 
 """ ----------------------------------------------------------------------
-1. What does the following program output?
+ 1. What is the output of the following?
 
 type(False): <class 'bool'>
 type(bool): <class 'type'>

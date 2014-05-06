@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# ----------
-# IsPrime.py
-# ----------
+# ------------
+# Exercise1.py
+# ------------
 
 from math import sqrt
 

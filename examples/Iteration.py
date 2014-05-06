@@ -131,7 +131,7 @@ assert(list(y) == [10, 15, 20, 25, 30])
 assert(list(y) == [])
 
 x = [2, 3, 4, 5, 6]
-y = map(lambda v : v * 5, x)            # map
+y = map(lambda v : v * 5, x)                # map
 assert(type(y) is map)
 x += [7]
 assert(x       == [2,   3,  4,  5,  6,  7])
@@ -168,9 +168,7 @@ assert(x       == [2, 3, 4, 5, 6])
 assert(y       == [15, 25])
 
 x = [2, 3, 4, 5, 6]
-y = filter(lambda v : v % 2, x)
-assert(type(y) is filter)
-z = map(lambda v : v * 5, y)
+z = map(lambda v : v * 5, filter(lambda v : v % 2, x))
 assert(type(z) is map)
 assert(x       == [2, 3, 4, 5, 6])
 assert(list(z) == [15, 25])
@@ -191,7 +189,6 @@ for v in x :
 assert(x == [2, 3, 4])
 assert(y == [4, 5])
 assert(z == [2+4, 2+5, 3+4, 3+5, 4+4, 4+5])
-assert(z == [6, 7, 7, 8, 8, 9])
 
 x = [2, 3, 4]
 y = [4, 5]
@@ -200,7 +197,6 @@ assert(type(z) is list)
 assert(x       == [2, 3, 4])
 assert(y       == [4, 5])
 assert(z       == [2+4, 2+5, 3+4, 3+5, 4+4, 4+5])
-assert(z       == [6, 7, 7, 8, 8, 9])
 
 x = [2, 3, 4]
 y = [4, 5]
@@ -209,7 +205,6 @@ assert(type(z) is types.GeneratorType)
 assert(x       == [2, 3, 4])
 assert(y       == [4, 5])
 assert(list(z) == [2+4, 2+5, 3+4, 3+5, 4+4, 4+5])
-assert(list(z) != [6, 7, 7, 8, 8, 9])
 assert(list(z) == [])
 
 x = {2 : "abc", 3 : "def", 4 : "ghi"}
