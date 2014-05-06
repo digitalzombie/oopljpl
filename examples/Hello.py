@@ -28,16 +28,6 @@ Nothing to be done.
 
 
 
-% coverage run --branch Hello.py
-Nothing to be done.
-
-% coverage report
-Name    Stmts   Miss Branch BrMiss  Cover
------------------------------------------
-Hello       2      0      0      0   100%
-
-
-
 % python3
 Python 3.2.3 (default, Sep 25 2013, 18:22:43)
 [GCC 4.6.3] on linux2
