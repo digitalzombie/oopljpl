@@ -121,18 +121,36 @@ y = [v * 5 for v in x]                  # list comprehension
 assert(type(y) is list)
 assert(x       == [2,   3,  4,  5,  6])
 assert(y       == [10, 15, 20, 25, 30])
+assert(y       == [10, 15, 20, 25, 30])
 
 x = [2, 3, 4, 5, 6]
 y = map(lambda v : v * 5, x)            # map
 assert(type(y) is map)
 assert(x       == [2,   3,  4,  5,  6])
 assert(list(y) == [10, 15, 20, 25, 30])
+assert(list(y) == [])
+
+x = [2, 3, 4, 5, 6]
+y = map(lambda v : v * 5, x)            # map
+assert(type(y) is map)
+x += [7]
+assert(x       == [2,   3,  4,  5,  6,  7])
+assert(list(y) == [10, 15, 20, 25, 30, 35])
+assert(list(y) == [])
 
 x = [2, 3, 4, 5, 6]
 y = (v * 5 for v in x)                  # generator
 assert(type(y) is types.GeneratorType)
 assert(x       == [2,   3,  4,  5,  6])
 assert(list(y) == [10, 15, 20, 25, 30])
+assert(list(y) == [])
+
+x = [2, 3, 4, 5, 6]
+y = (v * 5 for v in x)                      # generator
+assert(type(y) is types.GeneratorType)
+x += [7]
+assert(x       == [2,   3,  4,  5,  6,  7])
+assert(list(y) == [10, 15, 20, 25, 30, 35])
 assert(list(y) == [])
 
 x = [2, 3, 4, 5, 6]
