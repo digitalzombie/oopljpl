@@ -30,7 +30,8 @@ Nothing to be done.
 
 % coverage run --branch Hello.py
 Nothing to be done.
-coverage report
+
+% coverage report
 Name    Stmts   Miss Branch BrMiss  Cover
 -----------------------------------------
 Hello       2      0      0      0   100%

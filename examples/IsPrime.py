@@ -32,12 +32,12 @@ assert(    is_prime(11));
 print("Done.")
 
 """
-% coverage run --branch IsPrime2.py
+% coverage run --branch IsPrime.py
 IsPrime.py
 Done.
 
 % coverage report
-Name       Stmts   Miss Branch BrMiss  Cover
---------------------------------------------
-IsPrime2      20      0      6      0   100%
+Name      Stmts   Miss Branch BrMiss  Cover
+-------------------------------------------
+IsPrime      23      0      6      0   100%
 """
