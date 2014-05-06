@@ -16,12 +16,9 @@ class UnitTests (unittest.TestCase) :
     def test_3 (self) :
         self.assertTrue(3 == 2)
 
-print("UnitTests.py")
 unittest.main()
-print("Done.")
 
 """
-UnitTests.py
 F.F
 ======================================================================
 FAIL: test_1 (__main__.UnitTests)
@@ -29,7 +26,7 @@ FAIL: test_1 (__main__.UnitTests)
 Traceback (most recent call last):
   File "./UnitTests.py", line 11, in test_1
     self.assertTrue(1 == 2)
-AssertionError: False is not true
+assert ionError: False is not true
 
 ======================================================================
 FAIL: test_3 (__main__.UnitTests)
@@ -37,7 +34,7 @@ FAIL: test_3 (__main__.UnitTests)
 Traceback (most recent call last):
   File "./UnitTests.py", line 17, in test_3
     self.assertTrue(3 == 2)
-AssertionError: False is not true
+assert ionError: False is not true
 
 ----------------------------------------------------------------------
 Ran 3 tests in 0.001s

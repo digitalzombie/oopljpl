@@ -7,7 +7,7 @@
 from math import sqrt
 
 def is_prime (n) :
-    assert(n > 0)
+    assert n > 0
     if (n < 2) or ((n % 2) == 0) :
         return False
     for i in range(3, int(sqrt(n))) :
@@ -17,10 +17,10 @@ def is_prime (n) :
 
 print("Exercise1.py")
 
-assert(not is_prime( 1));
-assert(    is_prime( 3));
-assert(not is_prime( 4));
-assert(    is_prime( 5));
+assert not is_prime( 1)
+assert     is_prime( 3)
+assert not is_prime( 4)
+assert     is_prime( 5)
 
 print("Done.")
 
