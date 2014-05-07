@@ -7,7 +7,7 @@
 import sys
 import time
 
-class range_iterator (object) :
+class range_iterator () :
     def __init__ (self, b, e) :
         self.b = b
         self.e = e
