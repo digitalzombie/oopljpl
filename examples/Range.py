@@ -29,10 +29,10 @@ def range_generator (b, e) :
 
 def test (f) :
     print(f.__name__)
-    assert list(range(2, 2)) == []
-    assert list(range(2, 3)) == [2]
-    assert list(range(2, 4)) == [2, 3]
-    assert list(range(2, 5)) == [2, 3, 4]
+    assert list(f(2, 2)) == []
+    assert list(f(2, 3)) == [2]
+    assert list(f(2, 4)) == [2, 3]
+    assert list(f(2, 5)) == [2, 3, 4]
     b = time.clock()
     sum(f(1, 100))
     e = time.clock()
