@@ -68,12 +68,12 @@ assert g(2, 5, *d.keys())   == [2, 5, {'a', 'b'}]
 assert g(2, 5, *d.values()) == [2, 5, {3, 4}]
 assert g(2, 5, *d.items())  == [2, 5, {('a', 3), ('b', 4)}]
 assert g(2, 5, *d)          == [2, 5, {'a', 'b'}]
-assert (g(2, *d)             == [2, 'a', {'b'}])              # ?
+assert g(2, *d)             == [2, 'a', {'b'}]               # ?
 assert g(y = 3, *u)         == [2, 3, set()]
 assert g(*u, y = 3)         == [2, 3, set()]
 #f(2, y = 5, *d)                                             # TypeError: f() got multiple values for argument 'y'
 #f(x = 2, y = 5, *d)                                         # TypeError: f() got multiple values for argument 'x'
-#f(**d))                                                     # TypeError: f() got an unexpected keyword argument 'a'
+#f(**d)                                                      # TypeError: f() got an unexpected keyword argument 'a'
 
 d = {"z" : 4, "y" : 3}
 #f(2, **d)             # TypeError: f() got an unexpected keyword argument 'z'

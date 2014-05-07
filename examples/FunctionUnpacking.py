@@ -84,15 +84,15 @@ d = {"z" : 4, "y" : 3, "x" : 2}
 assert f(**d) == [2, 3, 4]
 
 d = {"z" : 4, "y" : 3}
-assert set(f(2,     **d)) == {2, 3, 4}
-assert set(f(x = 2, **d)) == {2, 3, 4}
-#f(**d, 2)                              # SyntaxError: invalid syntax
-#f(**d, x = 2)                          # SyntaxError: invalid syntax
-#f(**d)                                 # TypeError: f() takes exactly 3 arguments (2 given)
-#f(2, 5, **d)                           # TypeError: f() got multiple values for keyword argument 'y'
+assert f(2,     **d) == [2, 3, 4]
+assert f(x = 2, **d) == [2, 3, 4]
+#f(**d, 2)                        # SyntaxError: invalid syntax
+#f(**d, x = 2)                    # SyntaxError: invalid syntax
+#f(**d)                           # TypeError: f() takes exactly 3 arguments (2 given)
+#f(2, 5, **d)                     # TypeError: f() got multiple values for keyword argument 'y'
 
 d = {"y" : 3}
-#f(2, 4, **d)                         # TypeError: f() got multiple values for argument 'y'
+#f(2, 4, **d)                        # TypeError: f() got multiple values for argument 'y'
 assert f(2, z = 4, **d) == [2, 3, 4]
 
 d = {"z" : 4, "y" : 3, "t" : 5}
@@ -103,6 +103,6 @@ d = {"z" : 4, "y" : 3, "t" : 5}
 t = (2, 3)
 d = {"z" : 4}
 assert f(*t, **d) == [2, 3, 4]
-#f(**d, *t)                     # SyntaxError: invalid syntax
+#f(**d, *t)                    # SyntaxError: invalid syntax
 
 print("Done.")
