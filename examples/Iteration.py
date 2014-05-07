@@ -18,22 +18,22 @@ assert s == 9
 
 a = [2, 3, 4]
 for v in a :
-    v += 1             # ?
+    v += 1            # ?
 assert a == [2, 3, 4]
 
 a = ["abc", "def", "ghi"]
 for v in a :
-    v += "x"                       # ?
+    v += "x"                      # ?
 assert a == ["abc", "def", "ghi"]
 
 a = [[2], [3], [4]]
 for v in a :
-    v += (5,)                         # ?
+    v += (5,)                        # ?
 assert a == [[2, 5], [3, 5], [4, 5]]
 
 a = [(2,), (3,), (4,)]
 for v in a :
-    v += (5,)                   # ?
+    v += (5,)                  # ?
 assert a == [(2,), (3,), (4,)]
 
 a = [(2, "abc"), (3, "def"), (4, "ghi")]
@@ -75,7 +75,7 @@ try :
     assert False
 except IndexError :
     pass
-#x[0] = 2               # TypeError: 'xrange' object does not support item assignment
+#x[0] = 2                # TypeError: 'xrange' object does not support item assignment
 s = 0
 for v in x :
     s += v
