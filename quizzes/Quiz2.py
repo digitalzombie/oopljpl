@@ -26,7 +26,7 @@ from functools import reduce
 from operator  import add, sub
 
 print(reduce(add, [2, 3, 4], 5))
-print(reduce(lambda x, y : x - y, [2, 3, 4], 5))
+print(reduce(sub, [2, 3, 4], 5))
 print()
 
 print(reduce(add, ["abc", "def", "ghi"], ""))
