@@ -4,8 +4,9 @@
 # Sum.py
 # ------
 
-import functools
-import operator
+from functools import reduce
+from operator  import add
+
 import sys
 import time
 
@@ -40,10 +41,10 @@ def sum_for_in (a) :
     return s
 
 def sum_reduce_lambda (a) :
-    return functools.reduce(lambda x, y : x + y, a, 0)
+    return reduce(lambda x, y : x + y, a, 0)
 
 def sum_reduce_operator (a) :
-    return functools.reduce(operator.add, a, 0)
+    return reduce(add, a, 0)
 
 def test_1 (f, c) :
     assert f(c())          == 0
