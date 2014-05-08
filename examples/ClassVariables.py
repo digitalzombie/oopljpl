@@ -27,25 +27,25 @@ assert hasattr(A, "v1")
 assert A.v1             == 1
 assert A.__dict__["v1"] == 1
 
-assert (not hasattr(A, "__v2"))   # __v2 is private
-#assert (A.__v2             == 2) # AttributeError: type object 'A' has no attribute '__v2'
-#assert (A.__dict__["__v2"] == 2) # KeyError: '__v2'
+assert not hasattr(A, "__v2")   # __v2 is private
+#assert A.__v2             == 2 # AttributeError: type object 'A' has no attribute '__v2'
+#assert A.__dict__["__v2"] == 2 # KeyError: '__v2'
 
-assert (hasattr(A, "_A__v2"))      # not really!
+assert hasattr(A, "_A__v2")      # not really!
 assert A._A__v2             == 2
 assert A.__dict__["_A__v2"] == 2
 
-assert (not hasattr(A, "__v3"))   # __v3 is private
-#assert (A.__v3             == 3) # AttributeError: type object 'A' has no attribute '__v3'
-#assert (A.__dict__["__v3"] == 3) # KeyError: '__v3'
+assert not hasattr(A, "__v3")   # __v3 is private
+#assert A.__v3             == 3 # AttributeError: type object 'A' has no attribute '__v3'
+#assert A.__dict__["__v3"] == 3 # KeyError: '__v3'
 
-assert (hasattr(A, "_A__v3"))      # not really!
+assert hasattr(A, "_A__v3")      # not really!
 assert A._A__v3             == 3
 assert A.__dict__["_A__v3"] == 3
 
 assert not hasattr(A, "v4")
-#assert (A.v4             == 4) # AttributeError: type object 'A' has no attribute 'v4'
-#assert (A.__dict__["v4"] == 4) # KeyError: 'v4'
+#assert A.v4             == 4 # AttributeError: type object 'A' has no attribute 'v4'
+#assert A.__dict__["v4"] == 4 # KeyError: 'v4'
 
 A.v4 = [2, 3, 4]
 assert hasattr(A, "v4")
@@ -53,18 +53,19 @@ assert A.v4             == [2, 3, 4]
 assert A.__dict__["v4"] == [2, 3, 4]
 
 assert not hasattr(A, "__v5")
-#assert (A.__v5             == 5) # AttributeError: type object 'A' has no attribute 'v4'
-#assert (A.__dict__["__v5"] == 5) # KeyError: 'v4'
+#assert A.__v5             == 5 # AttributeError: type object 'A' has no attribute 'v4'
+#assert A.__dict__["__v5"] == 5 # KeyError: 'v4'
 
 A.__v5 = [2, 3, 4]
-assert hasattr(A, "__v5")
+assert     hasattr(A, "__v5")
+assert not hasattr(A, "_A__v5")
 assert A.__v5             == [2, 3, 4]
 assert A.__dict__["__v5"] == [2, 3, 4]
 
 del A.v0
 assert not hasattr(A, "v0")
-#assert (A.v0             == 0) # AttributeError: type object 'A' has no attribute 'v0'
-#assert (A.__dict__["v0"] == 0) # KeyError: 'v0'
+#assert A.v0             == 0 # AttributeError: type object 'A' has no attribute 'v0'
+#assert A.__dict__["v0"] == 0 # KeyError: 'v0'
 
 x = A()
 y = A()

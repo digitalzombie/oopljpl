@@ -20,21 +20,21 @@ def f () :
     v3 = 11 # local
 
     try :
-        assert (v4 == 4) # local
+        assert (v4 == 4)                                                            # local
         assert False
     except UnboundLocalError as e :
         assert len(e.args) == 1
         assert e.args      == ("local variable 'v4' referenced before assignment",)
-    v4 = 12             # local
+    v4 = 12                                                                         # local
 
     try :
-        v5 += 13        # local
+        v5 += 13                                                                    # local
         assert False
     except UnboundLocalError as e :
         assert len(e.args) == 1
         assert e.args      == ("local variable 'v5' referenced before assignment",)
 
-    global v6           # global
+    global v6 # global
     v6 = 14
 
 v3 = 3
