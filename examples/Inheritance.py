@@ -6,8 +6,6 @@
 
 class Shape :
     def __init__ (self, x, y) :
-        super(Shape, self).__init__()
-#       object.__init__(self)
         self.x = x
         self.y = y
 
@@ -26,8 +24,7 @@ class Shape :
 
 class Circle (Shape) :
     def __init__ (self, x, y, r) :
-        super(Circle, self).__init__(x, y) # doesn't mention Shape
-#       Shape.__init__(self, x, y)
+        Shape.__init__(self, x, y)
         self.r = r
 
     def area (self) :
