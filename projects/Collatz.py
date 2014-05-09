@@ -11,9 +11,9 @@ def collatz_solve (r, w) :
     s = r.readline()
     if s == "" :
         return False
-    l = s.split()
-    a[0] = int(l[0])
-    a[1] = int(l[1])
+    a = s.split()
+    x = int(a[0])
+    y = int(a[1])
     w.write("1 10 20\n100 200 125\n201 210 89\n900 1000 174\n")
 
 if __name__ == '__main__' :

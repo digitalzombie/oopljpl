@@ -5,7 +5,7 @@
 """
 
 from io       import StringIO
-from unittest import TestCase
+from unittest import main, TestCase
 
 from Collatz import collatz_solve
 
