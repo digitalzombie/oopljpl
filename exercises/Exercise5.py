@@ -52,11 +52,12 @@ class Integer_2 :
         self.n = n
 
     def __iter__ (self) :
-        while self.n > 0 :
-            yield self.n % 10
-            self.n //= 10
+        m = self.n
+        while m > 0 :
+            yield m % 10
+            m //= 10
 
-def Integer_3 (n) :
+def Integer_1 (n) :
     while n > 0 :
         yield n % 10
         n //= 10
@@ -67,19 +68,19 @@ class UnitTests (unittest.TestCase) :
         self.p = iter(self.x)
 
     def test_1 (self) :
-        assert iter(self.p) is self.p
+        self.assertTrue(iter(self.p) is self.p)
 
     def test_2 (self) :
-        assert next(self.p) == 4
+        self.assertTrue(next(self.p) == 4)
 
     def test_3 (self) :
         next(self.p)
-        assert next(self.p) == 3
+        self.assertTrue(next(self.p) == 3)
 
     def test_4 (self) :
         next(self.p)
         next(self.p)
-        assert next(self.p) == 2
+        self.assertTrue(next(self.p) == 2)
 
     def test_5 (self) :
         next(self.p)
@@ -91,9 +92,9 @@ class UnitTests (unittest.TestCase) :
             pass
 
     def test_6 (self) :
-        assert sum(self.x) == 9
+        self.assertTrue(sum(self.x) == 9)
 
     def test_7 (self) :
-        assert sum(self.p) == 9
+        self.assertTrue(sum(self.p) == 9)
 
 unittest.main()
