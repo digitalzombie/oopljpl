@@ -2,14 +2,12 @@
 
 from sys import stdin, stdout
 
-def collatz_read (r, x) :
+def collatz_read (r) :
     s = r.readline()
     if s == "" :
         return False
     a = s.split()
-    x[0] = int(a[0])
-    x[1] = int(a[1])
-    return True
+    return [int(a[0]), int(a[1])]
 
 def cycle_length (n) :
     assert n > 0
@@ -35,8 +33,10 @@ def collatz_print (w, i, j, v) :
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
 
 def collatz_solve (r, w) :
-    a = [0, 0]
-    while collatz_read(r, a) :
+    while True :
+        a = collatz_read(r)
+        if not a :
+            return
         i, j = a
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)

@@ -8,12 +8,10 @@ from Collatz1 import collatz_read, collatz_eval, collatz_print, collatz_solve
 class TestCollatz (TestCase) :
     def test_read (self) :
         r = StringIO("1 10\n100 200\n201 210\n900 1000\n")
-        x = [0, 0]
-        b = collatz_read(r, x)
-        i, j = x
-        self.assertTrue(b == True)
-        self.assertTrue(i ==    1)
-        self.assertTrue(j ==   10)
+        a = collatz_read(r)
+        i, j = a
+        self.assertTrue(i ==  1)
+        self.assertTrue(j == 10)
 
     def test_eval_1 (self) :
         self.assertTrue(collatz_eval(1, 10) == 20)
