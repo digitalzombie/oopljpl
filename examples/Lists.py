@@ -66,14 +66,14 @@ except IndexError as e:
     assert e.args       == ('pop index out of range',)
 
 a = []
-a.extend([2])                                                 # +=
-a.extend((3, 4, 5))
-a.extend(set([4, 6]))
-assert a == [2, 3, 4, 5, 4, 6]
+a.extend([2, 3])                                              # +=
+a.extend((4, 5))
+a.extend({6, 7})
+assert set(a) == {2, 3, 4, 5, 6, 7}
 a.remove(4)
-assert a == [2, 3, 5, 4, 6]
+assert set(a) == {2, 3, 5, 6, 7}
 try :
-    a.remove(7)
+    a.remove(4)
     assert False
 except ValueError as e:
     assert type(e.args) is tuple

@@ -104,8 +104,8 @@ d  = {"abc"             : "abc", "def"             : "def"}
 d  = {(2, 3)            : "abc", (4, 5)            : "def"}
 d  = {frozenset([2, 3]) : "abc", frozenset([4, 5]) : "def"}
 
-#d = {set([2, 3]) : "abc", set([4, 5]) : "def"} # TypeError: set objects are unhashable
-#d = {[2, 3]      : "abc", [4, 5]      : "def"} # TypeError: list objects are unhashable
+#d = {{2, 3} : "abc", {4, 5} : "def"} # TypeError: set objects are unhashable
+#d = {[2, 3] : "abc", [4, 5] : "def"} # TypeError: list objects are unhashable
 
 class A :
     pass
