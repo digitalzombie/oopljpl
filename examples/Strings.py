@@ -48,9 +48,6 @@ b''') == 3)
 assert (len("""a
 b""") == 3)
 
-assert "abc"      is     "abc"
-assert str("abc") is     str("abc") is "abc"
-assert "ab" + "c" is     "ab" + "c" is "abc"
 assert str(True)  is     str(True)
 assert str(2)     is not str(2)
 assert str(2)     ==     str(2)
@@ -65,22 +62,6 @@ assert "" is ""
 s = "abc"
 t = str(s)
 assert s is t
-
-s = "01234"
-assert s[2         ] == "2"
-assert s[1 : 4     ] == "123"
-assert s[1 :       ] == "1234"
-assert s[  : 4     ] == "0123"
-assert s[1 : 4 :  2] == "13"
-assert s[4 : 1 : -2] == "42"
-
-s = "54321"
-assert s[-3          ] == "3"
-assert s[-4 : -1     ] == "432"
-assert s[-4 :        ] == "4321"
-assert s[   : -1     ] == "5432"
-assert s[-4 : -1 :  2] == "42"
-assert s[-1:  -4 : -2] == "13"
 
 s = "abcde"
 t = s[:]

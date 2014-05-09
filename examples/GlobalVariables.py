@@ -13,7 +13,7 @@ v5 = 5
 v6 = 6
 
 def f () :
-    assert (v1 == 1) # global
+    assert v1 == 1 # global
 
     v2 = 10 # local
 

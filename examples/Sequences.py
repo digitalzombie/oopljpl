@@ -13,7 +13,7 @@ def test_1 (c) :
     a = c("01234")
     assert a[2] == "2"
     try :
-        assert (a[5] == 0)                              # index error
+        assert (a[5] == 0)                             # index error
         assert False
     except IndexError as e :
         assert type(e.args)    is tuple
@@ -23,7 +23,7 @@ def test_1 (c) :
     a = c("54321")
     assert a[-3] == "3"
     try :
-        assert (a[-6] == 0)                             # index error
+        assert (a[-6] == 0)                            # index error
         assert False
     except IndexError as e :
         assert type(e.args)    is tuple
@@ -41,11 +41,11 @@ def test_1 (c) :
 
     a = c("01234")
     assert not (a != a)
-    assert     a == a
+    assert      a == a
     assert not (a <  a)
-    assert     a <= a
+    assert      a <= a
     assert not (a >  a)
-    assert     a >= a
+    assert      a >= a
 
     a = c("01234")
     assert (a + a) == c("0123401234")
@@ -109,14 +109,14 @@ def test_2 (c) :
 
     a = c([[2, 3, 4], [5, 6]])
     assert sum(a, []) == [2, 3, 4, 5, 6]
-#   assert (sum(a)     == [2, 3, 4, 5, 6]) # TypeError: unsupported operand type(s) for +: 'int' and 'list'
+#   assert sum(a)     == [2, 3, 4, 5, 6] # TypeError: unsupported operand type(s) for +: 'int' and 'list'
 
     a = c([(2, 3, 4), (5, 6)])
     assert sum(a, ()) == (2, 3, 4, 5, 6)
-#   assert (sum(a)     == (2, 3, 4, 5, 6)) # TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
+#   assert sum(a)     == (2, 3, 4, 5, 6) # TypeError: unsupported operand type(s) for +: 'int' and 'tuple'
 
     a = c(["abc", "de"])
-#   assert (sum(a, "") == "abcde") # TypeError: sum() can't sum strings [use "".join(seq) instead]
+#   assert sum(a, "") == "abcde" # TypeError: sum() can't sum strings [use "".join(seq) instead]
     assert "".join(a) == "abcde"
 
 print("Sequences.py")

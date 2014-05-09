@@ -177,14 +177,14 @@ assert j == 12
 i = 10          # 1010
 j = 12          # 1100
 i ^= j
-assert (i ==  6) # 0110
-assert (j == 12) # 1100
+assert i ==  6 # 0110
+assert j == 12 # 1100
 j ^= i
-assert (i ==  6) # 0110
-assert (j == 10) # 1010
+assert i ==  6 # 0110
+assert j == 10 # 1010
 i ^= j
-assert (i == 12) # 1100
-assert (j == 10) # 1010
+assert i == 12 # 1100
+assert j == 10 # 1010
 
 i = 10
 j = 12
@@ -216,15 +216,15 @@ assert (a and b) == (not (not a or not b))
 assert (a and c) == (not (not a or not c))
 
 a = [2, 3, 4]
-assert (a[1] == 3) # list index
+assert a[1] == 3 # list index
 a[1] += 1
 assert a[1] == 4
 
-assert ([2, 3, 4][1] == 3) # list index
+assert [2, 3, 4][1] == 3 # list index
 [2, 3, 4][1] += 1         # ?
 
 a = (2, 3, 4)
-assert (a[1] == 3) # tuple index
+assert a[1] == 3 # tuple index
 #a[1] += 1        # TypeError: 'tuple' object does not support item assignment
 
 s = "a"

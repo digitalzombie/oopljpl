@@ -71,7 +71,7 @@ x = range(10)
 assert x[0] == 0
 assert x[9] == 9
 try :
-    assert (x[10] == 10) # error: out of range
+    assert x[10] == 10 # error: out of range
     assert False
 except IndexError :
     pass
@@ -88,7 +88,7 @@ for v in x :
         break
     s += v
 else :            # else clause in a for loop
-    assert (False) # executes when the loop terminates normally
+    assert False # executes when the loop terminates normally
 assert s == 45
 
 x = itertools.count(0)             # 0, 1, 2, ...

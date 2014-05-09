@@ -14,7 +14,6 @@ class A :
         self.__iv  = 0
 #       cm()           # NameError: global name 'cm' is not defined
         A.cm()
-        self.cm()
 #       im()           # NameError: global name 'im' is not defined
 #       A.im()         # TypeError: unbound method im() must be called with A instance as first argument (got nothing instead)
         self.im()
@@ -30,13 +29,15 @@ class A :
         self.__iv += 1
 #       cm()           # NameError: global name 'cm' is not defined
         A.cm()
-        self.cm()
+        self.cm()      # misleading
 
 A.cm()
 #A.im() # TypeError: unbound method im() must be called with A instance as first argument (got nothing instead)
 
 x = A()
-x.cm()
+x.cm()   # misleading
+#A.cm(x) # TypeError: cm() takes 0 positional arguments but 1 was given
+
 x.im()
 A.im(x) # methods are really just functions
 

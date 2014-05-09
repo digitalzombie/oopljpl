@@ -20,13 +20,21 @@ assert a       ==     (2, 3, 'abc')
 assert a       !=     (3, 2, 'abc')
 assert a       !=     [2, 3, 'abc']
 
+a = list({2, 3.45, "abc"})
+assert type(a) == list
+assert (set(a) == {2, 3.45, "abc"}) # ?
+
 a = list({2 : "ghi", 3.45 : 3, "abc" : 6.78})
 assert type(a) == list
-assert (a       == [2, 3.45, "abc"])            # ?
+assert (set(a) == {2, 3.45, "abc"})           # ?
+
+a = tuple({2, 3.45, "abc"})
+assert type(a) is tuple
+assert (set(a) == {2, 3.45, "abc"}) # ?
 
 a = tuple({2 : "ghi", 3.45 : 3, "abc" : 6.78})
 assert type(a) is tuple
-assert (a       == (2, 3.45, "abc"))            # ?
+assert (set(a) == {2, 3.45, "abc"})            # ?
 
 assert [] is not []
 assert [] ==     []
@@ -75,6 +83,13 @@ except ValueError as e:
 a = [2, 3, 4];
 del a[1]
 assert a == [2, 4]
+try :
+    del a[2]
+    assert False
+except IndexError as e:
+    assert type(e.args) is tuple
+    assert len(e.args)  == 1
+    assert e.args       == ('list assignment index out of range',)
 
 a = [2, 3, 4];
 b = list(a)
@@ -93,6 +108,11 @@ a[0] += [5]
 assert a    is not [[2, 3, 4, 5], [2, 3, 4, 5]]
 assert a    ==     [[2, 3, 4, 5], [2, 3, 4, 5]]
 assert a[0] is     a[1]
+
+a = [[2, 3, 4] for v in range(2)]
+assert a    is not [[2, 3, 4], [2, 3, 4]]
+assert a    ==     [[2, 3, 4], [2, 3, 4]]
+assert a[0] is not a[1]
 
 a = [2, 3, 4]
 b = (a,)

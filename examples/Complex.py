@@ -4,6 +4,8 @@
 # Complex.py
 # ----------
 
+from copy import copy
+
 class My_Complex :
     def __init__ (self, r = 0, i = 0) :
         self.r = r
@@ -31,7 +33,7 @@ class My_Complex :
         return self
 
 def conjugate (rhs) :
-    return My_Complex(rhs.r, rhs.i).conjugate()
+    return copy(rhs).conjugate()
 
 print("Complex.py")
 

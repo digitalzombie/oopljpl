@@ -95,7 +95,7 @@ assert t >= s
 
 s = frozenset([1, 2, 3, 5])
 t = frozenset([1, 2, 4, 6])
-assert ((s | t) == frozenset([1, 2, 3, 4, 5, 6])) # union
+assert (s | t) == frozenset([1, 2, 3, 4, 5, 6]) # union
 assert (t | s) == frozenset([1, 2, 3, 4, 5, 6])
 assert ((s & t) == frozenset([1, 2]))             # intersection
 assert (t & s) == frozenset([1, 2])
