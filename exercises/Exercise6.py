@@ -46,46 +46,35 @@ class Queue :
 class UnitTests (unittest.TestCase) :
     def test_1 (self) :
         x = Queue()
-        assert x.empty()
-        assert x.size() == 0
+        self.assertTrue(x.empty())
+        self.assertTrue(x.size() == 0)
 
     def test_2 (self) :
         x = Queue()
         x.push(2)
-        assert not x.empty()
-        assert x.front() == 2
-        assert x.back()  == 2
-        assert x.size()  == 1
+        self.assertTrue(not x.empty())
+        self.assertTrue(x.front() == 2)
+        self.assertTrue(x.back()  == 2)
+        self.assertTrue(x.size()  == 1)
 
     def test_3 (self) :
         x = Queue()
         x.push(2)
         x.push(3)
-        assert not x.empty()
-        assert x.front() == 2
-        assert x.back()  == 3
-        assert x.size()  == 2
+        self.assertTrue(not x.empty())
+        self.assertTrue(x.front() == 2)
+        self.assertTrue(x.back()  == 3)
+        self.assertTrue(x.size()  == 2)
 
     def test_4 (self) :
         x = Queue()
         x.push(2)
         x.push(3)
         x.push(4)
-        assert not x.empty()
-        assert x.front() == 2
-        assert x.back()  == 4
-        assert x.size()  == 3
-
-    def test_4 (self) :
-        x = Queue()
-        x.push(2)
-        x.push(3)
-        x.push(4)
-        x.pop()
-        assert not x.empty()
-        assert x.front() == 3
-        assert x.back()  == 4
-        assert x.size()  == 2
+        self.assertTrue(not x.empty())
+        self.assertTrue(x.front() == 2)
+        self.assertTrue(x.back()  == 4)
+        self.assertTrue(x.size()  == 3)
 
     def test_4 (self) :
         x = Queue()
@@ -93,11 +82,22 @@ class UnitTests (unittest.TestCase) :
         x.push(3)
         x.push(4)
         x.pop()
+        self.assertTrue(not x.empty())
+        self.assertTrue(x.front() == 3)
+        self.assertTrue(x.back()  == 4)
+        self.assertTrue(x.size()  == 2)
+
+    def test_4 (self) :
+        x = Queue()
+        x.push(2)
+        x.push(3)
+        x.push(4)
         x.pop()
-        assert not x.empty()
-        assert x.front() == 4
-        assert x.back()  == 4
-        assert x.size()  == 1
+        x.pop()
+        self.assertTrue(not x.empty())
+        self.assertTrue(x.front() == 4)
+        self.assertTrue(x.back()  == 4)
+        self.assertTrue(x.size()  == 1)
 
     def test_5 (self) :
         x = Queue()
@@ -107,7 +107,7 @@ class UnitTests (unittest.TestCase) :
         x.pop()
         x.pop()
         x.pop()
-        assert x.empty()
-        assert x.size() == 0
+        self.assertTrue(x.empty())
+        self.assertTrue(x.size() == 0)
 
 unittest.main()
